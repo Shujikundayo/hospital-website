@@ -1,0 +1,372 @@
+/* =============================================
+   admin.css — 管理画面スタイル
+   ============================================= */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* hidden属性をCSSのdisplayプロパティで上書きさせない */
+[hidden] { display: none !important; }
+
+:root {
+  --admin-main: #2a7fa5;
+  --admin-danger: #c0392b;
+  --admin-bg: #f0f4f7;
+  --admin-white: #ffffff;
+  --admin-border: #d5e0e8;
+  --admin-text: #2c3e50;
+  --admin-text-light: #6b8194;
+  --admin-radius: 8px;
+  --admin-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  --font: 'Noto Sans JP', sans-serif;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--admin-bg);
+  color: var(--admin-text);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* ---- ログイン ---- */
+
+.login-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #dff3fa 0%, #e8f7ee 100%);
+  padding: 24px;
+}
+
+.login-box {
+  background: var(--admin-white);
+  border-radius: 16px;
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+.login-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--admin-main);
+  margin-bottom: 24px;
+}
+
+.login-logo i { font-size: 1.4rem; }
+
+.login-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--admin-text);
+  margin-bottom: 28px;
+}
+
+.login-error {
+  color: var(--admin-danger);
+  font-size: 0.82rem;
+  margin-bottom: 12px;
+}
+
+/* ---- 管理画面レイアウト ---- */
+
+.admin-screen { min-height: 100vh; }
+
+.admin-header {
+  background: var(--admin-white);
+  border-bottom: 1px solid var(--admin-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.admin-header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.admin-header-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: var(--admin-main);
+  font-size: 0.95rem;
+}
+
+.admin-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-main { padding: 32px 24px; }
+
+.admin-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.admin-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.admin-page-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--admin-text);
+}
+
+.admin-page-title i { color: var(--admin-main); }
+
+/* ---- ボタン ---- */
+
+.btn-admin {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border: none;
+  border-radius: var(--admin-radius);
+  font-family: var(--font);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+
+.btn-primary-admin {
+  background: var(--admin-main);
+  color: #fff;
+}
+.btn-primary-admin:hover { opacity: 0.85; }
+
+.btn-ghost-admin {
+  background: transparent;
+  color: var(--admin-text-light);
+  border: 1px solid var(--admin-border);
+}
+.btn-ghost-admin:hover { background: var(--admin-bg); }
+
+.btn-danger-admin {
+  background: var(--admin-danger);
+  color: #fff;
+}
+.btn-danger-admin:hover { opacity: 0.85; }
+
+/* ---- フォーム ---- */
+
+.post-form-card {
+  background: var(--admin-white);
+  border-radius: var(--admin-radius);
+  padding: 28px 32px;
+  box-shadow: var(--admin-shadow);
+  border: 2px solid var(--admin-main);
+}
+
+.post-form-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--admin-main);
+  margin-bottom: 20px;
+}
+
+.form-row-admin {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group { margin-bottom: 16px; }
+
+.form-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--admin-text);
+}
+
+.required {
+  display: inline-block;
+  background: #e74c3c;
+  color: #fff;
+  font-size: 0.68rem;
+  padding: 1px 5px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--admin-border);
+  border-radius: var(--admin-radius);
+  font-family: var(--font);
+  font-size: 0.88rem;
+  color: var(--admin-text);
+  background: #fafcfd;
+  transition: border-color 0.15s;
+  min-height: 40px;
+}
+.form-control:focus {
+  outline: none;
+  border-color: var(--admin-main);
+  background: var(--admin-white);
+}
+textarea.form-control { resize: vertical; }
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--admin-border);
+}
+
+/* ---- 投稿一覧テーブル ---- */
+
+.posts-table-wrap {
+  background: var(--admin-white);
+  border-radius: var(--admin-radius);
+  box-shadow: var(--admin-shadow);
+  overflow: hidden;
+}
+
+.posts-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.posts-table thead th {
+  background: #eaf3f8;
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--admin-text-light);
+  border-bottom: 1px solid var(--admin-border);
+}
+
+.posts-table tbody tr {
+  border-bottom: 1px solid var(--admin-border);
+  transition: background 0.1s;
+}
+.posts-table tbody tr:last-child { border-bottom: none; }
+.posts-table tbody tr:hover { background: #f7fbfd; }
+
+.posts-table tbody td {
+  padding: 14px 16px;
+  font-size: 0.88rem;
+  vertical-align: middle;
+}
+
+.col-date { white-space: nowrap; color: var(--admin-text-light); font-size: 0.82rem; }
+.col-title { max-width: 420px; }
+.col-actions { width: 90px; text-align: right; white-space: nowrap; }
+
+.admin-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.badge-important { background: #fdecea; color: #c0392b; }
+.badge-notice    { background: #e8f4fd; color: #2980b9; }
+.badge-hours     { background: #eafaf1; color: #27ae60; }
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--admin-border);
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background 0.15s, color 0.15s;
+  color: var(--admin-text-light);
+}
+.btn-edit:hover  { background: #eaf3f8; color: var(--admin-main); border-color: var(--admin-main); }
+.btn-delete:hover{ background: #fdecea; color: var(--admin-danger); border-color: var(--admin-danger); }
+
+.empty-msg {
+  text-align: center;
+  padding: 40px;
+  color: var(--admin-text-light);
+}
+
+/* ---- 削除確認ダイアログ ---- */
+
+.confirm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 24px;
+}
+
+.confirm-dialog {
+  background: var(--admin-white);
+  border-radius: 12px;
+  padding: 32px;
+  max-width: 360px;
+  width: 100%;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.18);
+}
+
+.confirm-msg {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.confirm-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* ---- レスポンシブ ---- */
+
+@media (max-width: 600px) {
+  .admin-header-brand span { display: none; }
+  .form-row-admin { grid-template-columns: 1fr; }
+  .post-form-card { padding: 20px; }
+  .posts-table thead th:nth-child(3),
+  .posts-table tbody td:nth-child(3) { display: none; }
+}

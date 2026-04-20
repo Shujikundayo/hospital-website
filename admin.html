@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>管理画面 | つおき高橋クリニック</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <!-- ログイン画面 -->
+  <div id="login-screen" class="login-screen">
+    <div class="login-box">
+      <div class="login-logo">
+        <i class="fa-solid fa-hospital"></i>
+        <span>つおき高橋クリニック</span>
+      </div>
+      <h1 class="login-title">管理者ログイン</h1>
+      <form id="login-form">
+        <div class="form-group">
+          <label class="form-label">パスワード</label>
+          <input type="password" id="password-input" class="form-control" placeholder="パスワードを入力" autocomplete="current-password">
+        </div>
+        <p id="login-error" class="login-error" hidden>パスワードが正しくありません</p>
+        <button type="submit" class="btn-admin btn-primary-admin">
+          <i class="fa-solid fa-right-to-bracket"></i>ログイン
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 管理画面本体 -->
+  <div id="admin-screen" class="admin-screen" hidden>
+
+    <header class="admin-header">
+      <div class="admin-header-inner">
+        <div class="admin-header-brand">
+          <i class="fa-solid fa-hospital"></i>
+          <span>つおき高橋クリニック 管理画面</span>
+        </div>
+        <div class="admin-header-actions">
+          <a href="news.html" target="_blank" class="btn-admin btn-ghost-admin">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>お知らせページを確認
+          </a>
+          <button id="logout-btn" class="btn-admin btn-ghost-admin">
+            <i class="fa-solid fa-right-from-bracket"></i>ログアウト
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="admin-main">
+      <div class="admin-container">
+
+        <div class="admin-toolbar">
+          <h2 class="admin-page-title"><i class="fa-solid fa-newspaper"></i>お知らせ管理</h2>
+          <button id="new-post-btn" class="btn-admin btn-primary-admin">
+            <i class="fa-solid fa-plus"></i>新規投稿
+          </button>
+        </div>
+
+        <!-- 投稿フォーム -->
+        <div id="post-form-wrap" class="post-form-wrap" hidden>
+          <div class="post-form-card">
+            <h3 id="form-title" class="post-form-title">新規投稿</h3>
+            <form id="post-form">
+              <input type="hidden" id="edit-id">
+              <div class="form-row-admin">
+                <div class="form-group">
+                  <label class="form-label">日付 <span class="required">必須</span></label>
+                  <input type="date" id="f-date" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">カテゴリー <span class="required">必須</span></label>
+                  <select id="f-category" class="form-control" required>
+                    <option value="important">重要</option>
+                    <option value="notice" selected>お知らせ</option>
+                    <option value="hours">診療時間</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">タイトル <span class="required">必須</span></label>
+                <input type="text" id="f-title" class="form-control" placeholder="タイトルを入力" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">本文 <span class="required">必須</span></label>
+                <textarea id="f-body" class="form-control" rows="6" placeholder="本文を入力" required></textarea>
+              </div>
+              <div class="form-actions">
+                <button type="button" id="cancel-btn" class="btn-admin btn-ghost-admin">キャンセル</button>
+                <button type="submit" class="btn-admin btn-primary-admin">
+                  <i class="fa-solid fa-floppy-disk"></i>保存する
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- 投稿一覧 -->
+        <div class="posts-table-wrap">
+          <table class="posts-table">
+            <thead>
+              <tr>
+                <th>日付</th>
+                <th>カテゴリー</th>
+                <th>タイトル</th>
+                <th class="col-actions">操作</th>
+              </tr>
+            </thead>
+            <tbody id="posts-tbody"></tbody>
+          </table>
+          <p id="empty-msg" class="empty-msg" hidden>投稿がありません。「新規投稿」から追加してください。</p>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- 削除確認ダイアログ -->
+  <div id="confirm-overlay" class="confirm-overlay" hidden>
+    <div class="confirm-dialog">
+      <p class="confirm-msg">この投稿を削除しますか？</p>
+      <div class="confirm-actions">
+        <button id="confirm-cancel" class="btn-admin btn-ghost-admin">キャンセル</button>
+        <button id="confirm-delete" class="btn-admin btn-danger-admin">
+          <i class="fa-solid fa-trash"></i>削除する
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/news-data.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
