@@ -1029,4 +1029,40 @@
   .hours-section {
     padding: 28px 0 36px;
   }
+
+  .hours-table-wrap {
+    overflow-x: visible;
+  }
+
+  .hours-schedule {
+    min-width: 0;
+  }
+
+  .hours-schedule thead th {
+    padding: 10px 4px;
+    font-size: 0.8rem;
+  }
+
+  .hours-schedule tbody td {
+    padding: 12px 4px;
+    font-size: 0.8rem;
+  }
+
+  .hours-schedule .time-cell {
+    padding-left: 8px;
+    white-space: normal;
+  }
+
+  .time-label {
+    font-size: 0.8rem;
+  }
+
+  .time-range {
+    font-size: 0.68rem;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
 }
