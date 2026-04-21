@@ -297,75 +297,63 @@
 
 /* 院長挨拶 */
 .greeting-inner {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 48px;
-  align-items: start;
+  max-width: 760px;
+  margin: 0 auto;
 }
 
-.greeting-image {
-  position: relative;
-}
-
-.doctor-photo {
-  width: 100%;
-  aspect-ratio: 3/4;
-  border-radius: var(--radius-md);
-  background: linear-gradient(160deg, var(--color-main-light), var(--color-sub-light));
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  box-shadow: var(--shadow-md);
-}
-
-.doctor-photo i {
-  font-size: 4rem;
-  color: var(--color-main);
-  opacity: 0.6;
-}
-
-.doctor-photo p {
-  font-size: 0.8rem;
-  color: var(--color-text-light);
-}
-
-.doctor-profile {
-  margin-top: 16px;
-  padding: 16px;
-  background: var(--color-bg-gray);
-  border-radius: var(--radius-md);
-  font-size: 0.8rem;
-}
-
-.doctor-profile h4 {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--color-main-dark);
-  margin-bottom: 4px;
-}
-
-.doctor-profile p {
-  color: var(--color-text-light);
-  line-height: 1.6;
-}
-
-.greeting-text blockquote {
-  font-size: 1.4rem;
+.greeting-quote {
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-main-dark);
   border-left: 4px solid var(--color-main);
-  padding-left: 16px;
-  margin-bottom: 24px;
+  padding: 8px 20px;
+  margin-bottom: 28px;
   line-height: 1.5;
 }
 
-.greeting-text p {
+.greeting-body p {
   font-size: var(--font-size-sm);
   color: var(--color-text-light);
   line-height: 2;
   margin-bottom: 16px;
+}
+
+.greeting-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-border);
+  flex-wrap: wrap;
+}
+
+.greeting-profile {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.greeting-profile-title {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.greeting-profile-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.greeting-profile-cert {
+  font-size: 0.78rem;
+  color: var(--color-main-dark);
+  background: var(--color-main-light);
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
 }
 
 /* お知らせ一覧（トップ） */
@@ -537,36 +525,17 @@
 }
 
 .profile-header {
-  display: flex;
-  gap: 32px;
-  align-items: flex-start;
   margin-bottom: 32px;
   padding-bottom: 32px;
   border-bottom: 1px solid var(--color-border);
 }
 
-.profile-photo {
-  width: 160px;
-  height: 200px;
-  flex-shrink: 0;
-  border-radius: var(--radius-md);
-  background: linear-gradient(160deg, var(--color-main-light), var(--color-sub-light));
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-
-.profile-photo i {
-  font-size: 3.5rem;
+.profile-role {
+  font-size: 0.8rem;
+  font-weight: 600;
   color: var(--color-main);
-  opacity: 0.6;
-}
-
-.profile-photo p {
-  font-size: 0.7rem;
-  color: var(--color-text-muted);
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
 }
 
 .profile-meta h3 {
@@ -973,12 +942,9 @@
   }
 
   /* 院長挨拶 */
-  .greeting-inner {
-    grid-template-columns: 1fr;
-  }
-
-  .doctor-photo {
-    aspect-ratio: 3/2;
+  .greeting-footer {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   /* アクセス */
@@ -994,16 +960,6 @@
   /* 院長プロフィール */
   .profile-box {
     padding: 24px;
-  }
-
-  .profile-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .profile-meta .tags {
-    justify-content: center;
   }
 
   /* 診療科詳細 */
