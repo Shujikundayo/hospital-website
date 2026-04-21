@@ -119,8 +119,9 @@
       <nav class="global-nav" aria-label="グローバルナビゲーション">
         <a href="index.html"><i class="fa-solid fa-house"></i>ホーム</a>
         <a href="about.html"><i class="fa-solid fa-user-doctor"></i>クリニックについて</a>
+        <a href="hours.html"><i class="fa-solid fa-clock"></i>診療時間</a>
         <a href="department.html"><i class="fa-solid fa-stethoscope"></i>診療科目</a>
-        <a href="access.html"><i class="fa-solid fa-clock"></i>アクセス・診療時間</a>
+        <a href="access.html"><i class="fa-solid fa-location-dot"></i>アクセス</a>
         <a href="news.html"><i class="fa-solid fa-newspaper"></i>お知らせ</a>
         <a href="tel:0592467771" class="header-tel"><i class="fa-solid fa-phone"></i>059-246-7771</a>
       </nav>
@@ -154,11 +155,11 @@
 
         <!-- タブナビゲーション -->
         <div class="dept-tabs" role="tablist">
-          <button id="tab-gastro" class="dept-tab active" role="tab" data-tab="gastro" aria-selected="true">
-            <i class="fa-solid fa-disease" style="margin-right:6px;"></i>胃腸内科
-          </button>
-          <button id="tab-internal" class="dept-tab" role="tab" data-tab="internal" aria-selected="false">
+          <button id="tab-internal" class="dept-tab active" role="tab" data-tab="internal" aria-selected="true">
             <i class="fa-solid fa-heart-pulse" style="margin-right:6px;"></i>内科
+          </button>
+          <button id="tab-gastro" class="dept-tab" role="tab" data-tab="gastro" aria-selected="false">
+            <i class="fa-solid fa-disease" style="margin-right:6px;"></i>胃腸内科
           </button>
           <button id="tab-anal" class="dept-tab" role="tab" data-tab="anal" aria-selected="false">
             <i class="fa-solid fa-user-doctor" style="margin-right:6px;"></i>肛門内科
@@ -168,8 +169,72 @@
           </button>
         </div>
 
+        <!-- 内科 -->
+        <div id="internal" class="dept-panel active" role="tabpanel" aria-labelledby="tab-internal">
+          <div class="dept-detail fade-in">
+            <div class="dept-detail-content">
+              <h2><i class="fa-solid fa-heart-pulse" style="margin-right:10px;color:var(--color-main);"></i>内科</h2>
+              <p>
+                内科では、発熱・咳・倦怠感といった風邪症状から、
+                高血圧・糖尿病・脂質異常症などの生活習慣病まで、
+                幅広い内科疾患に対応します。
+                「なんとなく体の調子が悪い」というときも、まずはご相談ください。
+              </p>
+              <p>
+                生活習慣病の管理では、薬物療法だけでなく食事・運動指導も合わせて行い、
+                患者さまのライフスタイルに合った治療計画を立てます。
+              </p>
+              <h3 style="font-size:1rem; font-weight:700; margin:24px 0 12px; color:var(--color-text);">
+                <i class="fa-solid fa-list-check" style="color:var(--color-main); margin-right:8px;"></i>
+                こんな症状にお応えします
+              </h3>
+              <div class="symptom-tags">
+                <span class="symptom-tag"><i class="fa-solid fa-check"></i>発熱・悪寒</span>
+                <span class="symptom-tag"><i class="fa-solid fa-check"></i>咳・鼻水・喉の痛み</span>
+                <span class="symptom-tag"><i class="fa-solid fa-check"></i>倦怠感・疲れやすさ</span>
+                <span class="symptom-tag"><i class="fa-solid fa-check"></i>頭痛・めまい</span>
+                <span class="symptom-tag"><i class="fa-solid fa-check"></i>動悸・息切れ</span>
+                <span class="symptom-tag"><i class="fa-solid fa-check"></i>むくみ</span>
+                <span class="symptom-tag"><i class="fa-solid fa-check"></i>花粉症・アレルギー</span>
+                <span class="symptom-tag"><i class="fa-solid fa-check"></i>生活習慣病管理</span>
+              </div>
+              <h3 style="font-size:1rem; font-weight:700; margin:24px 0 12px; color:var(--color-text);">
+                <i class="fa-solid fa-notes-medical" style="color:var(--color-main); margin-right:8px;"></i>
+                主な対象疾患
+              </h3>
+              <ul style="font-size:0.9rem; color:var(--color-text-light); line-height:2.2; padding-left:20px; list-style:disc;">
+                <li>風邪・インフルエンザ・COVID-19</li>
+                <li>高血圧症</li>
+                <li>糖尿病・糖尿病予備群</li>
+                <li>脂質異常症（高コレステロール・中性脂肪）</li>
+                <li>高尿酸血症（痛風）</li>
+                <li>花粉症・アレルギー性鼻炎</li>
+                <li>貧血</li>
+              </ul>
+            </div>
+            <div class="dept-aside">
+              <div class="aside-card">
+                <h4><i class="fa-solid fa-list" style="margin-right:6px;"></i>診療科目一覧</h4>
+                <ul class="aside-nav-list">
+                  <li><a href="#internal" class="active"><i class="fa-solid fa-heart-pulse"></i>内科</a></li>
+                  <li><a href="#gastro"><i class="fa-solid fa-disease"></i>胃腸内科</a></li>
+                  <li><a href="#anal"><i class="fa-solid fa-user-doctor"></i>肛門内科</a></li>
+                  <li><a href="#surgery"><i class="fa-solid fa-scissors"></i>外科</a></li>
+                </ul>
+              </div>
+              <div class="aside-card">
+                <h4><i class="fa-solid fa-phone" style="margin-right:6px;"></i>ご予約・お問い合わせ</h4>
+                <p style="font-size:1.4rem; font-weight:700; color:var(--color-main-dark); margin-bottom:4px;">
+                  <a href="tel:0592467771" style="color:inherit;">059-246-7771</a>
+                </p>
+                <p style="font-size:0.75rem; color:var(--color-text-muted);">受付時間中にお電話ください</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- 胃腸内科 -->
-        <div id="gastro" class="dept-panel active" role="tabpanel" aria-labelledby="tab-gastro">
+        <div id="gastro" class="dept-panel" role="tabpanel" aria-labelledby="tab-gastro">
           <div class="dept-detail fade-in">
             <div class="dept-detail-content">
               <h2><i class="fa-solid fa-disease" style="margin-right:10px;color:var(--color-main);"></i>胃腸内科</h2>
@@ -219,72 +284,8 @@
               <div class="aside-card">
                 <h4><i class="fa-solid fa-list" style="margin-right:6px;"></i>診療科目一覧</h4>
                 <ul class="aside-nav-list">
-                  <li><a href="#gastro" class="active"><i class="fa-solid fa-disease"></i>胃腸内科</a></li>
                   <li><a href="#internal"><i class="fa-solid fa-heart-pulse"></i>内科</a></li>
-                  <li><a href="#anal"><i class="fa-solid fa-user-doctor"></i>肛門内科</a></li>
-                  <li><a href="#surgery"><i class="fa-solid fa-scissors"></i>外科</a></li>
-                </ul>
-              </div>
-              <div class="aside-card">
-                <h4><i class="fa-solid fa-phone" style="margin-right:6px;"></i>ご予約・お問い合わせ</h4>
-                <p style="font-size:1.4rem; font-weight:700; color:var(--color-main-dark); margin-bottom:4px;">
-                  <a href="tel:0592467771" style="color:inherit;">059-246-7771</a>
-                </p>
-                <p style="font-size:0.75rem; color:var(--color-text-muted);">受付時間中にお電話ください</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 内科 -->
-        <div id="internal" class="dept-panel" role="tabpanel" aria-labelledby="tab-internal">
-          <div class="dept-detail fade-in">
-            <div class="dept-detail-content">
-              <h2><i class="fa-solid fa-heart-pulse" style="margin-right:10px;color:var(--color-main);"></i>内科</h2>
-              <p>
-                内科では、発熱・咳・倦怠感といった風邪症状から、
-                高血圧・糖尿病・脂質異常症などの生活習慣病まで、
-                幅広い内科疾患に対応します。
-                「なんとなく体の調子が悪い」というときも、まずはご相談ください。
-              </p>
-              <p>
-                生活習慣病の管理では、薬物療法だけでなく食事・運動指導も合わせて行い、
-                患者さまのライフスタイルに合った治療計画を立てます。
-              </p>
-              <h3 style="font-size:1rem; font-weight:700; margin:24px 0 12px; color:var(--color-text);">
-                <i class="fa-solid fa-list-check" style="color:var(--color-main); margin-right:8px;"></i>
-                こんな症状にお応えします
-              </h3>
-              <div class="symptom-tags">
-                <span class="symptom-tag"><i class="fa-solid fa-check"></i>発熱・悪寒</span>
-                <span class="symptom-tag"><i class="fa-solid fa-check"></i>咳・鼻水・喉の痛み</span>
-                <span class="symptom-tag"><i class="fa-solid fa-check"></i>倦怠感・疲れやすさ</span>
-                <span class="symptom-tag"><i class="fa-solid fa-check"></i>頭痛・めまい</span>
-                <span class="symptom-tag"><i class="fa-solid fa-check"></i>動悸・息切れ</span>
-                <span class="symptom-tag"><i class="fa-solid fa-check"></i>むくみ</span>
-                <span class="symptom-tag"><i class="fa-solid fa-check"></i>花粉症・アレルギー</span>
-                <span class="symptom-tag"><i class="fa-solid fa-check"></i>生活習慣病管理</span>
-              </div>
-              <h3 style="font-size:1rem; font-weight:700; margin:24px 0 12px; color:var(--color-text);">
-                <i class="fa-solid fa-notes-medical" style="color:var(--color-main); margin-right:8px;"></i>
-                主な対象疾患
-              </h3>
-              <ul style="font-size:0.9rem; color:var(--color-text-light); line-height:2.2; padding-left:20px; list-style:disc;">
-                <li>風邪・インフルエンザ・COVID-19</li>
-                <li>高血圧症</li>
-                <li>糖尿病・糖尿病予備群</li>
-                <li>脂質異常症（高コレステロール・中性脂肪）</li>
-                <li>高尿酸血症（痛風）</li>
-                <li>花粉症・アレルギー性鼻炎</li>
-                <li>貧血</li>
-              </ul>
-            </div>
-            <div class="dept-aside">
-              <div class="aside-card">
-                <h4><i class="fa-solid fa-list" style="margin-right:6px;"></i>診療科目一覧</h4>
-                <ul class="aside-nav-list">
-                  <li><a href="#gastro"><i class="fa-solid fa-disease"></i>胃腸内科</a></li>
-                  <li><a href="#internal" class="active"><i class="fa-solid fa-heart-pulse"></i>内科</a></li>
+                  <li><a href="#gastro" class="active"><i class="fa-solid fa-disease"></i>胃腸内科</a></li>
                   <li><a href="#anal"><i class="fa-solid fa-user-doctor"></i>肛門内科</a></li>
                   <li><a href="#surgery"><i class="fa-solid fa-scissors"></i>外科</a></li>
                 </ul>
@@ -344,8 +345,8 @@
               <div class="aside-card">
                 <h4><i class="fa-solid fa-list" style="margin-right:6px;"></i>診療科目一覧</h4>
                 <ul class="aside-nav-list">
-                  <li><a href="#gastro"><i class="fa-solid fa-disease"></i>胃腸内科</a></li>
                   <li><a href="#internal"><i class="fa-solid fa-heart-pulse"></i>内科</a></li>
+                  <li><a href="#gastro"><i class="fa-solid fa-disease"></i>胃腸内科</a></li>
                   <li><a href="#anal" class="active"><i class="fa-solid fa-user-doctor"></i>肛門内科</a></li>
                   <li><a href="#surgery"><i class="fa-solid fa-scissors"></i>外科</a></li>
                 </ul>
@@ -405,8 +406,8 @@
               <div class="aside-card">
                 <h4><i class="fa-solid fa-list" style="margin-right:6px;"></i>診療科目一覧</h4>
                 <ul class="aside-nav-list">
-                  <li><a href="#gastro"><i class="fa-solid fa-disease"></i>胃腸内科</a></li>
                   <li><a href="#internal"><i class="fa-solid fa-heart-pulse"></i>内科</a></li>
+                  <li><a href="#gastro"><i class="fa-solid fa-disease"></i>胃腸内科</a></li>
                   <li><a href="#anal"><i class="fa-solid fa-user-doctor"></i>肛門内科</a></li>
                   <li><a href="#surgery" class="active"><i class="fa-solid fa-scissors"></i>外科</a></li>
                 </ul>
@@ -446,7 +447,7 @@
           <h3>診療時間</h3>
           <table class="hours-table">
             <tr><td>午前 9:00〜12:00<br>午後 15:00〜18:30<br><small style="color:var(--color-text-muted);">※土曜午後のみ 14:00〜17:00</small></td></tr>
-            <tr><th scope="row">休診日</th><td>木・日・祝</td></tr>
+            <tr><td>休診日：木・日・祝</td></tr>
           </table>
         </div>
       </div>
